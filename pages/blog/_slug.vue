@@ -2,9 +2,9 @@
   <div class="">
     <!-- {{ document }} -->
     <!-- {{ this.$store.state.blog.posts }} -->
-    <div class="box flex-grow place-item-center space-x-12">
+    <div class="box flex-grow space-x-12">
       <section
-        class="bg-purple-100 border-2 shadow-md border-purple-200 rounded py-3 w-3/6 h-auto"
+        class="bg-purple-100 border-2 shadow-md border-purple-200 rounded md:py-0 sm:w-auto md:w-4/6 w-5/6 h-auto"
       >
         <Article v-if="document !== undefined" :article="document" />
       </section>
@@ -35,23 +35,6 @@ export default {
     }
   },
   mounted() {},
-
-  computed: {
-    //   post() {
-    //     if (this.$store.state.blog.posts.results !== undefined) {
-    //       const p = this.$store.state.blog.posts.results.filter(
-    //         (p) => p.uid === this.$route.params.slug
-    //       );
-    //       return p;
-    //     } else {
-    //       this.$store.dispatch("setPosts");
-    //       const p = this.$store.state.blog.posts.results.filter(
-    //         (p) => p.uid === this.$route.params.slug
-    //       );
-    //       return p;
-    //     }
-    //   },
-  },
 
   props: {},
   data() {

@@ -1,9 +1,10 @@
 <template>
- <div class="flex-grow">
-    <!-- {{document}} -->
+  <div class="flex-grow">
+    <!-- {{ document }} -->
     <!-- <h1>Sticky</h1> -->
+    <!-- {{posts}} -->
     <!-- <br> -->
-    <!-- {{stickyPost}} -->
+    <!-- {{this.$store.state.categories.categories}} -->
     <div>
       <div>
         <section class="relative px-8 mb-8">
@@ -17,12 +18,10 @@
                     class="object-cover object-center rounded-t-lg sm:rounded-l-lg sm:rounded-t-none h-full"
                     style="height: 100%; width: 100%"
                   />
-                  <!-- <prismic-image calss=" w-64/6 h-4/6 object-cover object-center rounded-t-lg sm:rounded-l-lg sm:rounded-t-none h-full " :field="document.results[0].data.featured_img_field" /> -->
                 </div>
               </template>
               <template v-slot:category> Special </template>
               <template v-slot:postdate>
-                <!-- {{new Date(stories[0].published_at).toDateString()}}} -->
               </template>
               <template v-slot:title>
                 <nuxt-link :to="document">
@@ -41,7 +40,6 @@
             <div class="max-w-screen-xl mx-auto">
               <div class="sm:grid sm:gap-7 sm:grid-cols-2 lg:grid-cols-3">
                 <span v-for="article in posts" :key="article._uid">
-                  <!-- <span>{{article}}</span> -->
                   <post-card v-if="article.data" :article="article"> </post-card>
                   <p v-else>
                     This content loads on save.
@@ -57,43 +55,41 @@
   </div>
 </template>
 <script>
-export default{
-computed: {
-    posts(context) {
-      if (context.document) {
-        return context.document.results.filter((p) => p.data.sticky_post !== true && p.data.category);
+export default {
+  middleware:['blogFetch',],
+  data() {
+    return {
+      category: Object,
+      document: Object,
+    };
+  },
+  computed: {
+    posts() {
+      if (this.$store.state.blog.posts) {
+        return this.$store.state.blog.posts.results.filter(
+          (p) => p.data.sticky_post !== true
+        );
       } else {
         return null;
       }
     },
     stickyPost() {
-      var res = this.document.results.filter((p) => p.data.sticky_post === true);
+      var res = this.$store.state.blog.posts.results.filter((p) => p.data.sticky_post === true && p.data.category.id === this.$route.params.slug);
       return res.length ? res[0] : null;
     },
   },
-head() {
+  head() {
     return {
-      title: '',
+      title: "",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: '',
+          content: "",
         },
       ],
     };
   },
-   async asyncData({ $prismic, params, error }) {
-    const document = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "post_type"),
-      // $prismic.predicates.at('my.post_type.post_category.post_category.name',params.slug)
-    );
 
-    if (document) {
-      return { document };
-    } else {
-      error({ statusCode: 404, message: "Page not found" });
-    }
-  },
 };
 </script>

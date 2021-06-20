@@ -1,5 +1,6 @@
 <template>
   <div class="flex-grow">
+    <!-- {{this.$store.state.categories.categories}} -->
     <div class="text-2xl relative px-8 mb-8 text-center font-bold text-purple-900">
       Category Posts
     </div>
@@ -9,7 +10,6 @@
           <div class="max-w-screen-xl mx-auto">
             <div class="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               <span v-for="category in document.results" :key="category.id">
-                <!-- <CategoryCard :category="category"> </CategoryCard> -->
                 <HBox :category="category" />
               </span>
             </div>
@@ -34,18 +34,18 @@ export default {
       ],
     };
   },
-  components: {  },
-  async asyncData({ $prismic, error }) {
-    const document = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "post_category")
-    );
 
-    if (document) {
-      return { document };
-    } else {
-      error({ statusCode: 404, message: "Page not found" });
+  computed: {
+    document() {
+      return this.$store.state.categories.categories;
     }
   },
-  mounted() {},
+  components: {},
+
+  mounted() {
+    if (this.$store.state.categories.isLoaded !== true){
+     this.$store.dispatch('categories/loadCategories');
+    }
+  },
 };
 </script>
