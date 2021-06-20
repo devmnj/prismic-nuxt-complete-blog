@@ -1,6 +1,6 @@
 # My Awesome Nuxt-Prismic Blog
 My migration story from Wordpress to Nuxt-Prismic. 
-[Demo](https:\\codehat.vercel.app)
+Vercel [Demo](https://codehat.vercel.app)
 # ScreenShots
 
 ## Blog posts
