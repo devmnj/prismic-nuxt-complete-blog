@@ -1,15 +1,16 @@
 <template>
-  <div class="elative px-2 font-serif">
+  <div class=" px-2 font-serif">
     <!-- {{ article }} -->
-    <prismic-rich-text
+ <prismic-rich-text
       :field="article.data.title"
-      class="font-black text-purple-900 text-4xl"
+      class="p-3 font-black text-purple-700 text-4xl"
     />
-    <div class="" >
-      <img
-        class="rounded my-3 h-48 w-full mb-4 object-cover"
+    <div class="block mt-2 rounded h-48 w-auto" :style="{backgroundImage:`url(${article.data.featured_img_link.url})`}" >
+
+      <!-- <img
+        class="rounded my-3 h-2/6 w-full mb-4 object-contain"
         :src="article.data.featured_img_link.url"
-      />
+      /> -->
 
     </div>
     <div
@@ -23,7 +24,7 @@
     <div class="font-bold flex justify-between">
       <span class="flex justify-left text-purple-800">
         {{ new Date(article.last_publication_date).toDateString()}}
-        <!-- {{  $prismic.asDate(article.last_publication_date)  }} -->
+        <!-- {{  article.data.category  }} -->
       </span>
       <!-- <span >Filed Under: <span class="italic text-green-500">
         </span> </span> -->
