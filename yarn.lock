@@ -14262,6 +14262,11 @@ vue-code-highlight@^0.7.8:
     prism-es6 "^1.2.0"
     vue "^2.5.16"
 
+vue-disqus@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/vue-disqus/-/vue-disqus-4.0.1.tgz#9ec040c575f3b87f3ef4bf43477ff20f06cc57dc"
+  integrity sha512-LCmEF4UqLMmMZaZwdMWZ5OO0imu/Cy0pZcr7c0QV7iJk1H9VWKUyxqO7+NNY8hhlAQXTdEq+Hv5tzOA9CfpjdA==
+
 vue-docgen-api@^4.34.2:
   version "4.40.0"
   resolved "https://registry.npmjs.org/vue-docgen-api/-/vue-docgen-api-4.40.0.tgz"

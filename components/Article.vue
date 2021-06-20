@@ -39,10 +39,17 @@
       <!-- <rich-text-renderer :document="blok.content.body" /> -->
     </p>
     <!-- <span class="font-bold">Tags:Vuejs</span> -->
+<br>
+
+   <section class='m-4 px-3 pt-3 rounded bg-purple-200 comments' aria-labelledby="comment">
+    <h2 id="comment">Comments</h2>
+        <Disqus shortname="developerm" />
+   </section>
   </div>
 </template>
 
 <script>
+import { Disqus } from "vue-disqus";
 import SliceZone from "vue-slicezone";
 import * as Slices from "@/slices";
 export default {
@@ -50,7 +57,7 @@ export default {
     return {};
   },
   components: {
-    SliceZone,
+    SliceZone,Disqus
   },
   methods: {
     resolver({ sliceName, slice, i }) {

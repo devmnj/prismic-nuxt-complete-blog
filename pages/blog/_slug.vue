@@ -8,12 +8,22 @@
       >
         <Article v-if="document !== undefined" :article="document" />
       </section>
+      <div>
+
+        
+
+      </div>
+
     </div>
   </div>
 </template>
 <script>
+import { Disqus } from "vue-disqus";
 export default {
   created() {},
+  components: {
+    Disqus,
+  },
   head() {
     return {
       title: this.document.data.title[0].text,
