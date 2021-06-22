@@ -82,6 +82,11 @@ export default {
   gtm: {
     id: 'UA-56767-97',
   },
+  publicRuntimeConfig: {
+    gtm: {
+      id: process.env.GOOGLE_TAG_MANAGER_ID
+    }
+  },
   // 'google-gtag': {
   //   id: 'UA-56767-97',
   //   config: {
