@@ -77,26 +77,29 @@ export default {
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/google-gtag'
+    '@nuxtjs/gtm'
   ],
-  'google-gtag': {
+  gtm: {
     id: 'UA-56767-97',
-    config: {
-      anonymize_ip: true, // anonymize IP
-      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-      linker: {
-        domains: ['domain.com','domain.org']
-      }
-    },
-    debug: true, // enable to track in dev mode
-    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
-    additionalAccounts: [{
-      id: 'AW-XXXX-XX', // required if you are adding additional accounts
-      config: {
-        send_page_view: false // optional configurations
-      }
-    }]
   },
+  // 'google-gtag': {
+  //   id: 'UA-56767-97',
+  //   config: {
+  //     anonymize_ip: true, // anonymize IP
+  //     send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+  //     linker: {
+  //       domains: ['domain.com','domain.org']
+  //     }
+  //   },
+  //   debug: true, // enable to track in dev mode
+  //   disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+  //   additionalAccounts: [{
+  //     id: 'AW-XXXX-XX', // required if you are adding additional accounts
+  //     config: {
+  //       send_page_view: false // optional configurations
+  //     }
+  //   }]
+  // },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vue-slicezone']
