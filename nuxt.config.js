@@ -1,4 +1,10 @@
+require('dotenv').config()
 export default {
+
+    googleAnalytics: {
+      id: process.env.GID,
+
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
@@ -39,6 +45,8 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/prismic',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/google-analytics',
     [
       "nuxt-fontawesome",
       {
@@ -63,14 +71,32 @@ export default {
     ],
   ],
   prismic: {
-    endpoint: 'https://jsuu.cdn.prismic.io/api/v2',
+    endpoint: process.env.prismicEP,
     modern: false
     /* see configuration for more */
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/google-gtag'
   ],
-
+  'google-gtag': {
+    id: 'UA-56767-97',
+    config: {
+      anonymize_ip: true, // anonymize IP
+      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
+      linker: {
+        domains: ['domain.com','domain.org']
+      }
+    },
+    debug: true, // enable to track in dev mode
+    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
+    additionalAccounts: [{
+      id: 'AW-XXXX-XX', // required if you are adding additional accounts
+      config: {
+        send_page_view: false // optional configurations
+      }
+    }]
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vue-slicezone']
