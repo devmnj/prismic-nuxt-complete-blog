@@ -5,6 +5,12 @@ export default {
       id: process.env.GID,
 
   },
+ 
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: process.env.GID
+    }
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
