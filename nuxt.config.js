@@ -1,11 +1,11 @@
 require('dotenv').config()
 export default {
 
-    googleAnalytics: {
-      id: process.env.GID,
+  googleAnalytics: {
+    id: process.env.GID,
 
   },
- 
+
   publicRuntimeConfig: {
     googleAnalytics: {
       id: process.env.GID
@@ -90,7 +90,13 @@ export default {
   },
   publicRuntimeConfig: {
     gtm: {
-      id: process.env.GOOGLE_TAG_MANAGER_ID
+      id: process.env.GOOGLE_TAG_MANAGER_ID,
+      scriptDefer: true,
+      pageTracking: true,
+      // layer: 'test',
+      variables: {
+        test: '1'
+      }
     }
   },
   // 'google-gtag': {
