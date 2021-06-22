@@ -86,7 +86,7 @@ export default {
     '@nuxtjs/gtm'
   ],
   gtm: {
-    id: 'UA-56767-97',
+    id: 'GTM-MSFCXHC',
   },
   publicRuntimeConfig: {
     gtm: {
