@@ -12,7 +12,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@nuxtjs/google-gtag": "^1.0.4",
-    "@nuxtjs/gtm": "^2.4.0",
+    "@nuxtjs/gtm": "^2.3.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@prismicio/vue": "^2.0.11",
     "@tailwindcss/typography": "^0.4.1",
@@ -23,6 +23,7 @@
     "vue-code-highlight": "^0.7.8",
     "vue-disqus": "^4.0.1",
     "vue-essential-slices": "^0.3.0",
+    "vue-gtag": "^1.16.1",
     "vue-highlight.js": "^3.1.0",
     "vue-slicezone": "^0.0.30"
   },

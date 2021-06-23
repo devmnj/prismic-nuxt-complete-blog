@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <prismic-rich-text class="font-black text-xl" :field="slice.primary.header_rich_text_field" />
+    <prismic-rich-text class="font-black text-xl py-4" :field="slice.primary.header_rich_text_field" />
   </div>
 </template>
 

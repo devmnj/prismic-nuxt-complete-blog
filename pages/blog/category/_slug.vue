@@ -74,7 +74,7 @@ export default {
       }
     },
     stickyPost() {
-      var res = this.$store.state.blog.posts.results.filter((p) => p.data.sticky_post === true && p.data.category.id === this.$route.params.slug);
+      var res = this.$store.state.blog.posts.results.filter((p) => p.data.sticky_post === true );
       return res.length ? res[0] : null;
     },
   },

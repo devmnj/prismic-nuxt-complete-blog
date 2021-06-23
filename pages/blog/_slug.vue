@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <!-- {{ document }} -->
+    <!-- {{ this.$ga.page(this.$router)}} -->
     <!-- {{ this.$store.state.blog.posts }} -->
     <div class="box flex-grow space-x-12">
       <section
@@ -10,7 +10,7 @@
       </section>
       <div>
 
-        
+
 
       </div>
 
