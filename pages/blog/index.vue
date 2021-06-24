@@ -41,7 +41,7 @@
             <div class="max-w-screen-xl mx-auto">
               <div class="sm:grid sm:gap-7 sm:grid-cols-2 lg:grid-cols-3">
                 <span v-for="article in posts" :key="article._uid">
-                  <!-- <span>{{article}}</span> -->
+                 
                   <post-card v-if="article.data" :article="article"> </post-card>
                   <p v-else>
                     This content loads on save.
@@ -90,7 +90,7 @@ export default {
   computed: {
     posts(context) {
       if (context.document) {
-        return context.document.results.filter((p) => p.data.sticky_post !== true);
+        return context.document.results;
       } else {
         return null;
       }
