@@ -1,18 +1,21 @@
 <template>
-  <div class=" px-2 font-serif">
+  <div class="px-2 font-serif">
     <!-- {{ article }} -->
- <prismic-rich-text
+    <prismic-rich-text
       :field="article.data.title"
-      class="p-3 font-black text-purple-700 text-4xl"
+      class="p-3 font-black text-purple-text-4xl"
     />
     <!-- <div class="block mt-2 rounded h-48 w-auto object" :style="{backgroundImage:`url(${article.data.featured_img_link.url})`}" > -->
-<!--
+    <!--
        <img
         class="rounded my-3 h-2/6 w-full mb-4 object-contain"
         :src="article.data.featured_img_link.url"
 
       /> -->
-<prismic-image class="rounded my-3 h-1/12 w-full mb-4 object-contain" :field="article.data.featured_img_link" />
+    <prismic-image
+      class="rounded my-3 h-1/12 w-full mb-4 object-contain"
+      :field="article.data.featured_img_link"
+    />
     <!-- </div> -->
     <div
       class="purple-blue-300 text-red-800 font-bold italic py-4 text-center rounded-md"
@@ -24,12 +27,9 @@
     </div>
     <div class="font-bold flex justify-between">
       <span class="flex justify-left text-purple-800">
-        {{ new Date(article.last_publication_date).toDateString()}}
+        {{ new Date(article.last_publication_date).toDateString() }}
         <!-- {{  article.data.category  }} -->
       </span>
-      <!-- <span >Filed Under: <span class="italic text-green-500">
-        </span> </span> -->
-      <!-- <span class="" v-for="cat in blok.content.categories" :key="cat._uid">{{cat.name}},</span> -->
     </div>
 
     <slice-zone :slices="article.data.body" :resolver="resolver" c />
@@ -40,12 +40,15 @@
       <!-- <rich-text-renderer :document="blok.content.body" /> -->
     </p>
     <!-- <span class="font-bold">Tags:Vuejs</span> -->
-<br>
+    <br />
 
-   <section class='m-4 px-3 pt-3 rounded bg-purple-200 comments' aria-labelledby="comment">
-    <h2 id="comment">Comments</h2>
-        <Disqus shortname="developerm" />
-   </section>
+    <section
+      class="m-4 px-3 pt-3 rounded bg-purple-200 comments"
+      aria-labelledby="comment"
+    >
+      <h2 id="comment">Comments</h2>
+      <Disqus shortname="developerm" />
+    </section>
   </div>
 </template>
 
@@ -58,7 +61,8 @@ export default {
     return {};
   },
   components: {
-    SliceZone,Disqus
+    SliceZone,
+    Disqus,
   },
   methods: {
     resolver({ sliceName, slice, i }) {
