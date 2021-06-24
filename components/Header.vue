@@ -1,6 +1,7 @@
 <template>
   <header data-fetch-key="1" class="relative w-full mx-auto bg-white px-8">
     <!-- {{$store.state.config.siteConfig}} -->
+    <meta name="msvalidate.01" content="CEC0A17FDEA4551FECB7D97C702E7E3E" />
     <div class="max-w-screen-xl mx-auto">
       <div class="flex justify-between items-center py-0 md:justify-start md:space-x-10">
         <div class="lg:w-0 lg:flex-1">

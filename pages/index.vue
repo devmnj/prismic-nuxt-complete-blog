@@ -33,18 +33,18 @@ export default {
   components: {
     SliceZone,
   },
-  // head() {
-  //   return {
-  //     title: this.page.data.title[0].text,
-  //     meta: [
-  //       {
-  //         hid: "description",
-  //         name: "description",
-  //         content: this.document.data.description[0].text,
-  //       },
-  //     ],
-  //   };
-  // },
+  head() {
+    return {
+      title: this.page.data.title[0].text,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.document.data.description[0].text,
+        },
+      ],
+    };
+  },
   data() {
     return {
       headerData: {},
