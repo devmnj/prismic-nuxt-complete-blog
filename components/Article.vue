@@ -5,14 +5,15 @@
       :field="article.data.title"
       class="p-3 font-black text-purple-700 text-4xl"
     />
-    <div class="block mt-2 rounded h-48 w-auto object" :style="{backgroundImage:`url(${article.data.featured_img_link.url})`}" >
-
+    <!-- <div class="block mt-2 rounded h-48 w-auto object" :style="{backgroundImage:`url(${article.data.featured_img_link.url})`}" > -->
+<!--
        <img
         class="rounded my-3 h-2/6 w-full mb-4 object-contain"
         :src="article.data.featured_img_link.url"
-      />  
 
-    </div>
+      /> -->
+<prismic-image class="rounded my-3 h-1/12 w-full mb-4 object-contain" :field="article.data.featured_img_link" />
+    <!-- </div> -->
     <div
       class="purple-blue-300 text-red-800 font-bold italic py-4 text-center rounded-md"
     >

@@ -85,7 +85,7 @@ export default {
     '@nuxtjs/sitemap'
   ],
   sitemap: {
-    hostname: 'https://codehat.vercel.app',
+    hostname: process.env.sitemap_host,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
