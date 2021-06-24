@@ -73,13 +73,16 @@ export default {
 
   prismic: {
     endpoint: process.env.prismicEP,
-    modern: false
+    modern: false,
+    linkResolver: function(doc) {
+      return '/'
+    }
     /* see configuration for more */
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-
+    '@nuxtjs/sitemap'
   ],
 
 
