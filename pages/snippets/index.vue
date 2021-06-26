@@ -49,23 +49,26 @@ export default {
       ],
     };
   },
-  async asyncData({ $prismic, params, error }) {
-    const snippets = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "snippet_type")
-    );
-    if (snippets) {
-      return { snippets };
-    } else {
-      error({ statusCode: 404, message: "Page not found" });
+  // async asyncData({ $prismic, params, error }) {
+  //   const snippets = await $prismic.api.query(
+  //     $prismic.predicates.at("document.type", "snippet_type")
+  //   );
+  //   if (snippets) {
+  //     return { snippets };
+  //   } else {
+  //     error({ statusCode: 404, message: "Page not found" });
+  //   }
+  // },
+   computed: {
+    snippets() {
+      return this.$store.state.snippet.snippets;
     }
   },
-  computed: {},
   components: {},
 
   mounted() {
-    // if (this.$store.state.categories.isLoaded !== true){
-    //  this.$store.dispatch('categories/loadCategories');
-    // }
+     this.$store.dispatch('snippet/loadSnippets');
+
   },
 };
 </script>
