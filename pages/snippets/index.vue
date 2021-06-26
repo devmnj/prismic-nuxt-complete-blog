@@ -1,0 +1,58 @@
+<template>
+  <div class="flex-grow">
+    <!-- {{this.$store.state.categories.categories}} -->
+    <div class="text-2xl relative px-8 mb-8 text-center font-bold text-purple-900">
+      Code Snippets
+    </div>
+    <dir>
+      <div>
+        <div class="relative px-8 mb-12">
+          <div class="max-w-screen-xl mx-auto">
+            <div class="sm:grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              <span v-for="snippet in snippets.results" :key="snippet.id">
+                <nuxt-link :to="`/snippets/${snippet.uid}`">
+                 <!-- {{snippet}} -->
+                  <LBox :title="snippet.uid" :description="snippet.data.body.filter(s=> s.slice_type ==='paragraph_slice')[0].primary.paragraph_rich_text_field[0].text" />
+                </nuxt-link>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dir>
+  </div>
+</template>
+<script>
+export default {
+  head() {
+    return {
+      title: "Code Snippets",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Code snippets for Javascript applications ",
+        },
+      ],
+    };
+  },
+  async asyncData({ $prismic, params, error }) {
+    const snippets = await $prismic.api.query(
+      $prismic.predicates.at("document.type", "snippet_type")
+    );
+    if (snippets) {
+      return { snippets };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
+  },
+  computed: {},
+  components: {},
+
+  mounted() {
+    // if (this.$store.state.categories.isLoaded !== true){
+    //  this.$store.dispatch('categories/loadCategories');
+    // }
+  },
+};
+</script>

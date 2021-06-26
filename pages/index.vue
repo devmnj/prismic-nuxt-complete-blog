@@ -35,12 +35,12 @@ export default {
   },
   head() {
     return {
-      title: this.page.data.title[0].text,
+      title: this.$store.state.config.siteConfig.title,
       meta: [
         {
           hid: "description",
           name: "description",
-          content: this.document.data.description[0].text,
+           content:this.$store.state.config.siteConfig.title,
         },
       ],
     };

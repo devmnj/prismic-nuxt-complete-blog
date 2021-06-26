@@ -2,11 +2,11 @@
   <div class="box-tech">
     <div class="content">
       <center><img src="img" alt="" /></center>
-      <p>DYNAMICWEB</p>
+      <p>{{title}}</p>
       <div class="desc">
         <slot name="desc">
           <center><div class="line"></div></center>
-          <p>Out-of-the box CMS, E-commerce, PIM and Marketing platform.</p>
+          <p>{{description}}</p>
         </slot>
       </div>
     </div>
@@ -27,9 +27,13 @@ export default {
     return {};
   },
   props: {
-    img: {
+    title: {
       trpe: String,
-      default: "https://www.e-bureauet.dk/media/1360/icon-dynamicweb.png"
+      default:'Some title'
+    },
+    description:{
+      trpe: String,
+      default:'Some code description'
     }
   },
 
@@ -52,7 +56,7 @@ body h1 {
   font-family: "Patua One", cursive;
 }
 body .box2 {
-  max-height: 350px;
+  max-height: 250px;
   height: 350px;
   background-color: #eeeeee;
   background-size: cover;
@@ -90,8 +94,8 @@ body .box2:hover .hover {
 }
 body .box {
   position: relative;
-  max-height: 255px;
-  height: 255px;
+  max-height: 155px;
+  height: 155px;
   background-color: #eeeeee;
   display: flex;
   align-content: center;
@@ -101,7 +105,7 @@ body .box {
 body .box .content-hover2 {
   transform: scale(0, 0);
   position: absolute;
-  height: 100%;
+  height: 20%;
   width: 100%;
   background-color: #d32222;
   transition: all 0.2s ease-in-out;
@@ -123,7 +127,7 @@ body .box .content-hover2 p {
 body .box .content-hover {
   transform: scale(0, 0);
   position: absolute;
-  height: 100%;
+  height: 20%;
   width: 100%;
   background-color: #252525;
   transition: all 0.2s ease-in-out;
@@ -164,7 +168,7 @@ body .box:hover > .content-hover2 {
 body .box-tech {
   position: relative;
   max-height: 255px;
-  height: 255px;
+  height: 135px;
   background-color: #eeeeee;
   display: flex;
   align-content: center;

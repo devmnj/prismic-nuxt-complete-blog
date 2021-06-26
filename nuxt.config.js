@@ -9,7 +9,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'prismic-p1',
+    title: 'CodeHat',
     htmlAttrs: {
       lang: 'en'
     },

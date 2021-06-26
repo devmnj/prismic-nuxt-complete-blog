@@ -7,7 +7,7 @@
 
 <script>
 export default {
-name:'TextSlice',
+ 
   props: {
     slice: Object,
   },
