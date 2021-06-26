@@ -16,7 +16,7 @@ export default {
   components: {},
   head() {
     return {
-       title: 'Code Snippets / Gits',
+       title: 'Code Snippets / Gists',
       meta: [
         {
           hid: "description",

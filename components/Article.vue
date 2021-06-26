@@ -3,7 +3,7 @@
     <!-- {{ article }} -->
     <prismic-rich-text
       :field="article.data.title"
-      class="p-3 font-black text-purple-text-4xl"
+      class="p-3 font-black text-purple-800 text-4xl"
     />
     <!-- <div class="block mt-2 rounded h-48 w-auto object" :style="{backgroundImage:`url(${article.data.featured_img_link.url})`}" > -->
     <!--
@@ -33,14 +33,6 @@
     </div>
 
     <slice-zone :slices="article.data.body" :resolver="resolver" c />
-
-    <div class="font-bold flex justify-between"></div>
-
-    <p class="text-xl">
-      <!-- <rich-text-renderer :document="blok.content.body" /> -->
-    </p>
-    <!-- <span class="font-bold">Tags:Vuejs</span> -->
-    <br />
 
     <section
       class="m-4 px-3 pt-3 rounded bg-purple-200 comments"
