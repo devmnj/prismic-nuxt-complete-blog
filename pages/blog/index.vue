@@ -7,7 +7,7 @@
     <div>
       <div>
         <section class="relative px-8 mb-8">
-          <nuxt-link :to="`/blog/${stickyPost.uid}`" v-if="stickyPost">
+          <nuxt-link :to="`/post/${stickyPost.uid}`" v-if="stickyPost">
             <featured-post>
               <template v-slot:thumbnail>
                 <div class="h-64 sm:h-96 relative">
@@ -41,7 +41,7 @@
             <div class="max-w-screen-xl mx-auto">
               <div class="sm:grid sm:gap-7 sm:grid-cols-2 lg:grid-cols-3">
                 <span v-for="article in posts" :key="article._uid">
-                 
+
                   <post-card v-if="article.data" :article="article"> </post-card>
                   <p v-else>
                     This content loads on save.
