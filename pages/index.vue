@@ -1,13 +1,13 @@
 <template>
   <div class="flex-grow">
-    <!-- {{posts}} -->
+  <!--  {{posts}}  -->
     <!-- <h1>Sticky</h1> -->
     <!-- <br> -->
-    <!-- {{stickyPost}} -->
+     <!--  {{stickyPost}} -->
     <div>
       <div>
         <section class="relative px-8 mb-8">
-          <nuxt-link :to="`/post/${stickyPost.uid}`" v-if="stickyPost">
+          <nuxt-link :to="`/blog/${stickyPost.uid}`" v-if="stickyPost">
             <featured-post>
               <template v-slot:thumbnail>
                 <div class="h-64 sm:h-96 relative">
@@ -77,7 +77,9 @@ export default {
   data() {},
   async asyncData({ $prismic, error }) {
     const document = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "post_type")
+      $prismic.predicates.at("document.type", "post_type"),{
+         orderings: '[document.last_publication_date desc]',
+      }
     );
 
     if (document) {

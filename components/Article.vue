@@ -39,7 +39,8 @@
       aria-labelledby="comment"
     >
       <h2 id="comment">Comments</h2>
-      <Disqus shortname="developerm" />
+     
+      <Disqus shortname="disq_handle" />
     </section>
   </div>
 </template>
@@ -60,6 +61,11 @@ export default {
     resolver({ sliceName, slice, i }) {
       return Slices[sliceName];
     },
+  },
+  computed:{
+disq_handle(){
+  return process.env.DISQ;
+}
   },
   props: {
     article: {

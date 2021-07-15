@@ -17,7 +17,7 @@
         </div>
         <div class="border-b-2 border-primary-500 w-8"></div>
         <div class="mt-4 uppercase text-gray-600 italic font-semibold text-xs">
-          <slot name="postdate">Post Date</slot>
+          <slot name="postdate">  {{ new Date(article.last_publication_date).toDateString() }}</slot>
         </div>
         <h2
           class="text-secondary-500 mt-1 font-black text-2xl group-hover:text-primary-500 transition duration-300"
