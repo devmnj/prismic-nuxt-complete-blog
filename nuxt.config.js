@@ -1,6 +1,6 @@
+const Prismic = require('@prismicio/client');
 require('dotenv').config()
 export default {
-
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -33,7 +33,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
 
-     '~/plugins/gtag'
+    '~/plugins/gtag',
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -74,7 +75,7 @@ export default {
   prismic: {
     endpoint: process.env.prismicEP,
     modern: false,
-    linkResolver: function(doc) {
+    linkResolver: function (doc) {
       return '/'
     }
     /* see configuration for more */
@@ -86,7 +87,26 @@ export default {
   ],
   sitemap: {
     hostname: process.env.sitemap_host,
+    cacheTime: 1000 * 60 * 60 * 2,
+    trailingSlash: true,
+    gzip: true,
+    routes: async () => {
+      var routes = [];
+      const api = await Prismic.client(process.env.prismicEP)
+      await api.query(
+        Prismic.predicates.at("document.type", "post_type")
+      ).then(function (doc) {
+        routes = doc.results.map(p => `/blog/${p.uid}`);
+        console.log(routes);
+      }).catch(function (err) {
+      })
+      return routes
+    }
   },
+
+
+
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

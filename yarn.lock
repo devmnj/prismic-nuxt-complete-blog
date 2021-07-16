@@ -1916,26 +1916,6 @@
     "consola" "^2.10.1"
     "dotenv" "^8.1.0"
 
-"@nuxtjs/google-analytics@^2.4.0":
-  "integrity" "sha512-rDQTwHIjyjVrx8GywHPuWykJ3jRFGaHl5Iqji/y8tQWUc0yGEeHxOoR0yimzxnTS1Ph2/PubQYpgnVeEPEdL/A=="
-  "resolved" "https://registry.npmjs.org/@nuxtjs/google-analytics/-/google-analytics-2.4.0.tgz"
-  "version" "2.4.0"
-  dependencies:
-    "vue-analytics" "^5.22.1"
-
-"@nuxtjs/google-gtag@^1.0.4":
-  "integrity" "sha512-0Xgbx1uQ9pKeV2QdU9xoxJVdgH66qyGQJ0l8pzVxz5X476qvJunj6fbcjWk0gT+MEX/VOAhfT/zw0Z1z9q9oNg=="
-  "resolved" "https://registry.npmjs.org/@nuxtjs/google-gtag/-/google-gtag-1.0.4.tgz"
-  "version" "1.0.4"
-
-"@nuxtjs/gtm@^2.3.2":
-  "integrity" "sha512-DC4m8mqKv8WkmFZJ/qEnpDXhJgbMQfTyny1p2GGbV+QzEtm61tAsNIjx9tO15KYH99EG3LqJN68RxsEMtn2ZVQ=="
-  "resolved" "https://registry.npmjs.org/@nuxtjs/gtm/-/gtm-2.3.2.tgz"
-  "version" "2.3.2"
-  dependencies:
-    "chalk" "^4.1.0"
-    "semver" "^7.3.2"
-
 "@nuxtjs/prismic@^1.3.1":
   "integrity" "sha512-U8L7lCpzdOz38gtdvavlYZKLPBW42s3KjeG0ucSGZFHW+Zr19u8EHoY64x9c+E45e83AwhedYAR0T4JsBW9f4A=="
   "resolved" "https://registry.npmjs.org/@nuxtjs/prismic/-/prismic-1.3.1.tgz"
@@ -3836,6 +3816,13 @@
   "integrity" "sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA=="
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.11.0.tgz"
   "version" "1.11.0"
+
+"axios@^0.21.1":
+  "integrity" "sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz"
+  "version" "0.21.1"
+  dependencies:
+    "follow-redirects" "^1.10.0"
 
 "babel-core@^7.0.0-bridge.0":
   "integrity" "sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg=="
@@ -6735,6 +6722,11 @@
   dependencies:
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
+
+"follow-redirects@^1.10.0":
+  "integrity" "sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.1.tgz"
+  "version" "1.14.1"
 
 "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
@@ -14763,11 +14755,6 @@
   "integrity" "sha1-YU9/v42AHwu18GYfWy9XhXUOTwk="
   "resolved" "https://registry.npmjs.org/void-elements/-/void-elements-3.1.0.tgz"
   "version" "3.1.0"
-
-"vue-analytics@^5.22.1":
-  "integrity" "sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ=="
-  "resolved" "https://registry.npmjs.org/vue-analytics/-/vue-analytics-5.22.1.tgz"
-  "version" "5.22.1"
 
 "vue-client-only@^2.0.0":
   "integrity" "sha512-vKl1skEKn8EK9f8P2ZzhRnuaRHLHrlt1sbRmazlvsx6EiC3A8oWF8YCBrMJzoN+W3OnElwIGbVjsx6/xelY1AA=="
