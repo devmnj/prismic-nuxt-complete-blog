@@ -121,7 +121,7 @@
             <div>
               <nav class="grid gap-y-8">
                 <a
-                  href="/home"
+                  href="/"
                   class="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition duration-300"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
